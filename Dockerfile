@@ -1,5 +1,5 @@
 FROM ubuntu
-RUN apt-get update && apt-get -y install pulseaudio alsa-utils darkice icecast2
+RUN apt-get update && apt-get -y install pulseaudio alsa-utils darkice icecast2 curl
 
 RUN sed "s/^load-module module-console-kit/#load-module module-console-kit/" -i /etc/pulse/default.pa \
     && sed "s/ENABLE=false/ENABLE=true/" -i /etc/default/icecast2 \
@@ -17,6 +17,7 @@ ADD darkice.cfg /home/user/darkice.cfg
 USER user
 RUN mkdir -p /home/user/.config/spotifyd
 ADD spotifyd.conf /home/user/.config/spotifyd/spotifyd.conf
+ADD custom_boot.sh /home/user/custom_boot.sh
 
 USER root
 

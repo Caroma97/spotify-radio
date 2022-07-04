@@ -8,8 +8,15 @@ echo "Starting Icecast2..."
 sleep 2
 
 echo "Starting spotifyd..."
+chmod 0755 /bin/spotifyd
 su - user -c "spotifyd --username $SPOTIFY_USERNAME --password $SPOTIFY_PASSWORD"
 sleep 2
 
+echo "Starting custom Boot Skript..."
+su - user -c "bash /home/user/custom_boot.sh"
+
 echo "Starting darkice..."
 su - user -c "darkice -c /home/user/darkice.cfg"
+sleep 2
+
+

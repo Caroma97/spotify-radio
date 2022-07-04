@@ -1,0 +1,10 @@
+# Ignore IDE specific files
+**/.vscode/
+**/.pio/
+
+# Private Files
+!/container
+/container/*
+!/container/example
+
+**/*.code-workspace
