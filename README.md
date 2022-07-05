@@ -2,6 +2,44 @@
 
 Stream your Spotify collection
 
+## Link Collection
+
+[Docker Hub](https://hub.docker.com/r/caroma/spotify-radio/)  
+[Github](https://github.com/Caroma97/spotify-radio)  
+[Github Compare](https://github.com/comigor/spotify-radio/compare/master...Caroma97:spotify-radio:master)
+[Spotifyd Config](https://github.com/Spotifyd/spotifyd) 
+[Darkice Config](https://gist.github.com/exiva/1255496)  
+[Icecast2 Config](https://icecast.org/docs/icecast-2.4.0/config-file.html)  
+
+### Alexa
+
+[Mein Radio Skill](https://meinradio.esp8266-server.de)  
+[Amazon Skill Link](https://www.amazon.de/Michael-Dworkin-Mein-Radio/dp/B08QVB4P26/?tag=esp8266radio-21&linkCode=ez)  
+[Radio Config](https://meinradio.esp8266-server.de/senderliste/)  
+
+
+## Compose File Template
+
+```
+services:
+  spotify-radio:
+    #image: borges/spotify-radio
+    image: caroma/spotify-radio:latest
+    container_name: spotify-radio
+    hostname: spotify-radio
+    ports:
+      - "20300:20300"
+    environment:
+      SPOTIFY_USERNAME: $USERNAME
+      SPOTIFY_PASSWORD: $PASS
+    volumes:
+      - /spotify-radio/container/custom_boot.sh:/home/user/custom_boot.sh:ro
+      #- /spotify-radio/container/spotifyd:/bin/spotifyd:ro
+      - /spotify-radio/container/spotifyd.conf:/home/user/.config/spotifyd/spotifyd.conf:ro
+      #- /spotify-radio/container/darkice.cfg:/home/user/darkice.cfg:ro
+      #- /spotify-radio/container/icecast.xml:/etc/icecast2/icecast.xml:ro
+```
+
 ## What?
 
 A docker image that creates a new device on Spotify (called "Daemon"), which streams what you're listening to Icecast.
