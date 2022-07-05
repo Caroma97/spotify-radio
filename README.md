@@ -8,7 +8,7 @@ Stream your Spotify collection
 [Github](https://github.com/Caroma97/spotify-radio)  
 [Original Github](https://github.com/comigor/spotify-radio)  
 [Github Compare](https://github.com/comigor/spotify-radio/compare/master...Caroma97:spotify-radio:master)  
-[Spotifyd Config](https://github.com/Spotifyd/spotifyd) 
+[Spotifyd Config](https://github.com/Spotifyd/spotifyd)  
 [Darkice Config](https://gist.github.com/exiva/1255496)  
 [Icecast2 Config](https://icecast.org/docs/icecast-2.4.0/config-file.html)  
 
